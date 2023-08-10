@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <login-component />
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+     Button
+</button>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LoginComponent from './components/LoginComponent.vue'; // Corrected the import name
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'login-component': LoginComponent // Corrected the component name
   }
-}
+};
 </script>
 
 <style>
