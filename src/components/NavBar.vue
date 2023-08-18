@@ -16,8 +16,8 @@
           <!-- Use router-link instead of <a> -->
           <router-link :to="link.link" class="text-xl hover:text-green-500">{{ link.name }}</router-link>
         </li>
-        <ButtonComponent>
-         login
+        <ButtonComponent to="/login">
+            Login
           </ButtonComponent>
       </ul>
     </div>
