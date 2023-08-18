@@ -1,20 +1,51 @@
 <template>
-  <div>
-    <login-component />
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-     Button
-</button>
+  <div class="bg-white-400 h-screen">
+    <NavBar/>
+    <p>
+      <!-- use the router-link component for navigation. -->
+      <!-- specify the link by passing the `to` prop. -->
+      <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
+      <router-link to="/"></router-link>
+      <router-link to="/about"></router-link>
+      <router-link to="/service"></router-link>
+      <router-link to="/contact"></router-link>
+      <router-link to="/login"></router-link>
+    </p>
+
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import LoginComponent from './components/LoginComponent.vue'; // Corrected the import name
+import NavBar from './components/NavBar.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from './components/HomeComponent.vue';
+import About from './components/AboutComponent.vue';
+import Service from './components/ServiceComponent.vue';
+import Contact from './components/ContactComponent.vue';
+import Login from './components/LoginComponent.vue';
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/service', component: Service },
+  { path: '/contact', component: Contact },
+  { path: '/login', component: Login }
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+});
 
 export default {
   name: 'App',
   components: {
-    'login-component': LoginComponent // Corrected the component name
-  }
+    NavBar
+  },
+  router // Attach the router instance to the component
 };
 </script>
 

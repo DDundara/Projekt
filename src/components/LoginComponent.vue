@@ -25,6 +25,7 @@
 export default {
   data() {
     return {
+      name: 'LearnMoreComponent',
       username: '',
       password: '',
       confirmPassword: ''
