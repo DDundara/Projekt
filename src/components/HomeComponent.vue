@@ -20,6 +20,7 @@
         <p>Explore our offerings from around the world.</p>
       </div>
       <div class="feature">
+      {{test}}
         <i class="bi bi-clock"></i>
         <h3>24/7 Support</h3>
         <p>Our dedicated team is here to assist you anytime.</p>
@@ -29,8 +30,31 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: 'HomeComponent'
+  name: 'HomeComponent',
+  data(){
+    return{
+      test:null
+    }
+  },
+  mounted(){
+
+     this.fetchTest();
+
+  },
+methods:{
+  async fetchTest() {
+      try {
+        const response = await axios.get("/");
+
+        const data = response.data;
+        this.test = data;
+      } catch (error) {
+        console.error("Error fetching: ", error);
+      }
+    },
+}
 }
 </script>
 
