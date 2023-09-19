@@ -57,8 +57,22 @@ export default {
   align-items: center;
 }
 
-label, input, textarea, button {
+label, input {
   margin-bottom: 10px;
+  width: calc(50% - 20px);
+  height: 5vh;
+}
+
+button {
+  margin-bottom: 10px;
+  width: calc(50% - 20px);
+  height: 8vh;
+}
+
+textarea {
+  margin-bottom: 10px;
+  width: calc(50% - 20px);
+  height: 17vh;
 }
 
 button {
